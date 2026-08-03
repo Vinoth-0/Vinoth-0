@@ -1,101 +1,31 @@
-<h1 align="center">Hi 👋, I'm Vinoth Kumar</h1>
-<h3 align="center">Aspiring Java Full Stack Developer from India 🇮🇳</h3>
+name: Generate Snake Animation
 
-<p align="center">
-  Passionate about building scalable backend applications with Java & Spring Boot while creating modern user interfaces with React.
-</p>
+on:
+  schedule:
+    - cron: "0 */6 * * *"   # runs every 6 hours
+  workflow_dispatch: {}      # lets you trigger it manually from the Actions tab
+  push:
+    branches:
+      - main
 
----
+jobs:
+  generate:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate snake animation
+        uses: Platane/snk@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
 
-## 🚀 About Me
-
-- 🔭 I'm currently working on **Java Full Stack projects using Spring Boot, React, and MySQL**
-- 🌱 I'm currently learning **Spring Boot, React, Hibernate, REST APIs, and Git**
-- 👯 I'm looking to collaborate on **Java and Spring Boot Open Source Projects**
-- 🤝 I'm looking for help with **System Design, Microservices, and Cloud Deployment**
-- 💬 Ask me about **Java, Spring Boot, React, MySQL, HTML, CSS, JavaScript, and REST APIs**
-- 📫 Reach me at **your-email@example.com**
-- ⚡ Fun fact: **I enjoy turning ideas into real-world applications through code.**
-
----
-
-## 💻 Tech Stack
-
-### Languages
-- Java
-- JavaScript
-- SQL
-
-### Frontend
-- HTML5
-- CSS3
-- React
-
-### Backend
-- Spring Boot
-- Spring MVC
-- Hibernate
-- JDBC
-- REST API
-
-### Database
-- MySQL
-
-### Tools
-- Git
-- GitHub
-- Maven
-- Eclipse
-- VS Code
-- Postman
-
----
-
-## 🚀 Projects
-
-### 📌 Employee Leave Management System
-- RESTful backend using Spring Boot
-- CRUD operations for Employees & Leave Requests
-- MySQL database integration
-- Swagger API Documentation
-- DTO Validation & Global Exception Handling
-
-### 📌 Train Reservation System
-- Java-based reservation system
-- Passenger and Booking Management
-- MySQL Database Integration
-
----
-
-## 🌱 Currently Learning
-
-- Spring Security
-- React Advanced Concepts
-- Microservices
-- Docker
-
----
-
-## 🎯 Goals
-
-- Become a skilled Java Backend Developer
-- Build production-ready applications
-- Contribute to Open Source
-- Continuously improve problem-solving skills
-
----
-
-## 📊 GitHub Stats
-
-*(GPRM will automatically generate these if you enable them.)*
-
----
-
-## 🤝 Connect with Me
-
-- 💼 LinkedIn: https://linkedin.com/in/your-link
-- 💻 GitHub: https://github.com/Vinoth-0
-
----
-
-⭐ Thanks for visiting my profile! Have a great day! 😊
+      - name: Push output to "output" branch
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
