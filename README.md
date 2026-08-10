@@ -63,9 +63,6 @@ A complete employee & leave request management system built with production-grad
 
 ### 📊 GitHub Stats
 
-![Vinoth's GitHub stats](https://github-readme-stats.vercel.app/api?username=Vinoth-0&theme=dark&hide_border=false&include_all_commits=false&count_private=false)
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Vinoth-0&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact)
-
 ![GitHub Streak](https://streak-stats.demolab.com/?user=Vinoth-0&theme=dark&hide_border=false)
 
 ![Profile Views](https://komarev.com/ghpvc/?username=Vinoth-0&label=Profile+Views&color=0e75b6&style=flat)
