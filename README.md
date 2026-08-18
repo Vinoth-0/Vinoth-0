@@ -34,6 +34,12 @@ A complete employee & leave request management system built with production-grad
 - **Frontend:** React 19, Vite, Bootstrap 5, Axios
 - **Features:** Full CRUD, pagination & sorting, centralized exception handling, DTO layer
 
+#### 🎓 [Course Marketplace](https://github.com/Vinoth-0/course-marketplace)
+A full-stack e-learning platform with role-based access for students, instructors, and administrators.
+- **Backend:** Spring Boot, MySQL
+- **Frontend:** React.js
+- **Features:** Role-based access control across student, instructor, and admin roles
+
 ---
 
 ### 💻 Tech Stack
